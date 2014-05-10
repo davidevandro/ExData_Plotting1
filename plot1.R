@@ -1,7 +1,8 @@
 ## Reading data
 
 ## 2 days, each day with 1440 minutes
-nRowRead <-  2*1440
+## 1 minute from Feb 2nd 23:59 to Feb 3rd 00:00 
+nRowRead <-  2*1440 + 1
 
 ## 6 hours and 36 minutes (in 16th) + 31 - 17 + 1 = 15 days in Dec,
 ## 31 days in Jan, each with 1440 minutes + one line to header
