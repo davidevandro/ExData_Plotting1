@@ -1,8 +1,8 @@
-## Reading data
+## Reading data from Feb 1st 00:01:00 to Feb 3rd 00:00:00
+## that compreends the consume from days Feb 1st to Feb 2nd 
 
 ## 2 days, each day with 1440 minutes
-## 1 minute from Feb 2nd 23:59 to Feb 3rd 00:00 
-nRowRead <-  2*1440 + 1
+nRowRead <-  2*1440
 
 ## 6 hours and 36 minutes (in 16th) + 31 - 17 + 1 = 15 days in Dec,
 ## 31 days in Jan, each with 1440 minutes + one line to header
@@ -13,7 +13,7 @@ nRowSkip <- 6*60 + 36 + 46*1440 + 1
 colNames <- names(read.table("household_power_consumption.txt", sep = ";", nrows = 1, header = TRUE))
 
 ## Read data
-data <- read.table("household_power_consumption.txt", sep = ";", nrows = nRowRead, skip = nRowSkip)
+data <- read.table("household_power_consumption.txt", sep = ";", nrows = nRowRead, skip = nRowSkip, header = TRUE)
 names(data) <- colNames
 data$DateTime <- strptime(paste(data$Date, data$Time), "%d/%m/%Y %H:%M:%S")
 
