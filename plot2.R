@@ -25,7 +25,7 @@ Sys.setlocale("LC_ALL","C")
 axis.Date(1, at = data$DateTime, labels = format(data$DateTime, "%a"))
 
 ## Plot without xlabel and with type equals to line
-plot(data$DateTime, data$Global_active_power, lty = "l", xlab = "", ylab = "Global Active Power (kilowatts)")
+plot(data$DateTime, data$Global_active_power, type = "l", xlab = "", ylab = "Global Active Power (kilowatts)")
 
 dev.off()
 
