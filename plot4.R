@@ -1,5 +1,4 @@
-## Reading data from Feb 1st 00:01:00 to Feb 3rd 00:00:00
-## that compreends the consume from days Feb 1st to Feb 2nd
+## Reading data
 
 ## 2 days, each day with 1440 minutes
 nRowRead <-  2*1440
@@ -13,7 +12,7 @@ nRowSkip <- 6*60 + 36 + 46*1440 + 1
 colNames <- names(read.table("household_power_consumption.txt", sep = ";", nrows = 1, header = TRUE))
 
 ## Read data
-data <- read.table("household_power_consumption.txt", sep = ";", nrows = nRowRead, skip = nRowSkip, header = TRUE)
+data <- read.table("household_power_consumption.txt", sep = ";", nrows = nRowRead, skip = nRowSkip)
 names(data) <- colNames
 data$DateTime <- strptime(paste(data$Date, data$Time), "%d/%m/%Y %H:%M:%S")
 
